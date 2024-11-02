@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+        </nav>
+        <h1>Login</h1>
+    </header>
+    <section>
+        <form onsubmit="login(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </section>
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'user' && password === 'password') {
+                alert('Login successful!');
+                window.location.href = 'courses.html';
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+    </script>
+</body>
+</html>
